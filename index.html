@@ -43,13 +43,15 @@
                 <span class="hero-greeting">Hello, I'm</span>
                 <h1 class="hero-name">Muhammed Rahees T K</h1>
                 <h2 class="hero-title">
-                    <span class="highlight-text">Junior Accountant & Finance Professional</span>
+                    <span class="highlight-text">Accounts & Finance Professional</span>
                 </h2>
                 <p class="hero-desc">Based in UAE. MBA-qualified with 4+ years of experience in bookkeeping, end-to-end
                     finance
                     operations, and audit support. Expert in AP, AR, GL, and UAE VAT compliance.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">My Work</a>
+                    <a href="https://drive.google.com/file/d/10VaE1lbNQFolE_5ugpvxqmp0nvxN_sc0/view?usp=drive_link"
+                        target="_blank" class="btn btn-primary">View Resume</a>
+                    <a href="#projects" class="btn btn-outline">My Work</a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
@@ -223,22 +225,57 @@
                                 <a href="https://www.instagram.com/muh_rahees_tk?igsh=Zml2ZnBmcHJkOGdw"
                                     target="_blank">Instagram Profile</a>
                             </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+971543472735">+971 54 347 2735</a>
+                            </li>
                             <!-- Add Email/Phone here if user provides them later -->
                         </ul>
                     </div>
+                    <!-- Hidden iframe for submission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                        onload="if(submitted) { showModal(); }"></iframe>
+
+                    <!-- Submission Modal -->
+                    <div class="modal-overlay" id="submission-modal">
+                        <div class="modal-content">
+                            <i class="fas fa-check-circle modal-icon"></i>
+                            <h3 class="modal-title">Message Sent!</h3>
+                            <p class="modal-message">Thank you for reaching out. I'll get back to you shortly.</p>
+                            <button class="btn btn-primary" onclick="closeModal()">Close</button>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                        var submitted = false;
+
+                        function showModal() {
+                            const modal = document.getElementById('submission-modal');
+                            modal.classList.add('active');
+                            document.querySelector('.contact-form').reset();
+                            submitted = false;
+                        }
+
+                        function closeModal() {
+                            const modal = document.getElementById('submission-modal');
+                            modal.classList.remove('active');
+                        }
+                    </script>
                     <form class="contact-form"
-                        onsubmit="event.preventDefault(); alert('This is a demo form. Please contact me via LinkedIn!');">
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd1TVY-KQQauMuFOFoCAupYPudBDPjiqL8ffrUDsRnrMwY3cg/formResponse"
+                        method="post" target="hidden_iframe" onsubmit="submitted=true;">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="entry.1378813456" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="entry.1918490707" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="How can I help you?" required></textarea>
+                            <textarea id="message" name="entry.1693551201" rows="5" placeholder="How can I help you?"
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
