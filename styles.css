@@ -590,17 +590,54 @@ img {
         z-index: 1001;
     }
 
-    .hero-name {
-        font-size: 2.5rem;
+    .hero {
+        flex-direction: column-reverse;
+        /* Stack image on top of text, or text spacing */
+        padding-top: 100px;
+        text-align: center;
+        height: auto;
+        min-height: 100vh;
+        justify-content: center;
     }
 
-    .hero {
-        padding-top: 120px;
-        text-align: center;
+    .hero-content {
+        max-width: 100%;
+        margin-top: 2rem;
+        z-index: 2;
+        /* Ensure text is above blobs if any */
+    }
+
+    .hero-visual {
+        position: relative;
+        /* Reset from absolute */
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 250px;
+        height: 250px;
+        margin: 0 auto 2rem auto;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-name {
+        font-size: 2.2rem;
+    }
+
+    .hero-title {
+        font-size: 1.4rem;
+    }
+
+    .highlight-text {
+        font-size: 1.6rem;
     }
 
     .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .about-stats {
